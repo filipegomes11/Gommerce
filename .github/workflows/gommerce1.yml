@@ -45,11 +45,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Install Render CLI
-        run: |
-          curl -o /usr/local/bin/render https://render.com/download/linux/latest
-          chmod +x /usr/local/bin/render
-
       - name: Deploy to Render
         run: |
-          render deploy -- --build-command="python setup.py install"
+          /usr/local/bin/render deploy -- --build-command="python setup.py install"
