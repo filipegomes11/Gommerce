@@ -47,9 +47,9 @@ jobs:
 
       - name: Install Render CLI
         run: |
-          curl -o /usr/local/bin/render https://render.com/download/linux/latest
+          wget https://render.com/cli/linux/render -O /usr/local/bin/render
           chmod +x /usr/local/bin/render
 
       - name: Deploy to Render
         run: |
-          /usr/local/bin/render deploy -- --build-command="python setup.py install"
+          render deploy -- --build-command="python setup.py install"
